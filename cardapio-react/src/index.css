@@ -36,7 +36,7 @@ main {
 
 
 /*****
-* CABECHALHO
+* CABECALHO
 *****/
 #root > header {
     background-color: #ffffff;
@@ -121,7 +121,9 @@ nav ul {
 nav ul li {
     flex: 0 0 auto;
 }
-nav ul a {
+nav ul button {
+    background-color: transparent;
+    cursor: pointer;
     border: 1px solid var(--border);
     border-radius: 999px;
     padding: .5rem 1rem;
@@ -130,12 +132,12 @@ nav ul a {
     font-size: 0.875rem;
     font-weight: 500;
 }
-nav ul a.active {
+nav ul button.active {
     border-color: var(--primary);
     background-color: var(--primary);
     color: #fff;
 }
-nav ul a:not(a.active):hover {
+nav ul button:not(button.active):hover {
     border-color: var(--primary);
     color: var(--primary);
 }
@@ -151,7 +153,7 @@ main {
 }
 main > section {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns:  minmax(0, 1fr);
     gap: 1.25rem;    
     align-items: start;
 }
@@ -307,6 +309,28 @@ footer .container {
     header .cart-button {
         width: 3.25rem;
         height: 2.625rem;
+    } 
+    main {
+        grid-template-columns: minmax(1, 1fr) 330px;
+    }
+    main section {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+/* Tablets */
+@media (min-width: 48rem) {
+    main {
+        grid-template-columns: minmax(2, 1fr) 330px;
+    }
+    main section {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    footer .container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        gap: 2rem;
     }
 }
 

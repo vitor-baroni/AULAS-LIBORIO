@@ -1,21 +1,16 @@
-import { Footer } from "./components/footer"
-import { Header } from "./components/layout/header"
-
-
+import { Footer } from "./components/layout/footer";
+import { Header } from "./components/layout/header";
+import { Nav } from "./components/layout/nav";
+import { categories } from "./data/categories";
 function App() {
+  function handleSelectCategory(alias: string) {
+    alert(`Categoria selecionada: ${alias}`);
+  }
   return (
     <>
       <Header />
 
-      <nav>
-        <ul className="container">
-          <li><a href="#" className="active">Todos</a></li>
-          <li><a href="#">Lanches</a></li>
-          <li><a href="#">Porções</a></li>
-          <li><a href="#">Bebidas</a></li>
-          <li><a href="#">Sobremesas</a></li>
-        </ul>
-      </nav>
+      <Nav categories={categories} activeCategory="todos" onselectCategory={handleSelectCategory} />
 
       <main>
         <section>
@@ -28,7 +23,7 @@ function App() {
               <img src="./assets/img/burger.png" alt="Burger" />
               <figcaption>Lanches</figcaption>
             </figure>
-            <h3>Burguer</h3>
+            <h3>Haborgue</h3>
             <p>Pão Brioche, hambúrguer 160g, queijo prato e molho da casa.</p>
             <p>R$ 22,00</p>
             <button type="button">Adicionar</button>
@@ -36,7 +31,7 @@ function App() {
 
           <article>
             <figure>
-              <img src="./assets/img/burger-bacon.png" alt="Burger-bacon" />
+              <img src="./assets/img//burger-bacon.png" alt="Burger-bacon" />
               <figcaption>Lanches</figcaption>
             </figure>
             <h3>Bacon Burger</h3>
@@ -47,7 +42,7 @@ function App() {
 
           <article>
             <figure>
-              <img src="./assets/img/burger-double.png" alt="Burger-double" />
+              <img src="./assets/img//burger-double.png" alt="Burger-double" />
               <figcaption>Lanches</figcaption>
             </figure>
             <h3>Duplo Burguer</h3>
@@ -125,6 +120,7 @@ function App() {
             <p>R$ 18,00</p>
             <button type="button">Adicionar</button>
           </article>
+
         </section>
 
         <aside>
@@ -136,9 +132,9 @@ function App() {
           </div>
         </aside>
       </main>
-
       <Footer />
-      <script src="./assets/js/script.js"></script>
+      <Footer />
+      <script src="assets/js/script.js"></script>
     </>
   )
 }
