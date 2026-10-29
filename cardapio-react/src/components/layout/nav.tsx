@@ -1,7 +1,7 @@
 import type { Category } from "../../data/categories";
 type NavProps = {
   categories: Category[];
-  activeCategory: string;
+  activeCategory: string | undefined;
   onselectCategory: (alias: string) => void;
 };
 export function Nav({ categories, activeCategory, onselectCategory }: NavProps) {
